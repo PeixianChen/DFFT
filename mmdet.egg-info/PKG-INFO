@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: mmdet
+Version: 2.11.0
+Summary: OpenMMLab Detection Toolbox and Benchmark
+Home-page: https://github.com/open-mmlab/mmdetection
+Author: OpenMMLab
+Author-email: openmmlab@gmail.com
+License: Apache License 2.0
+Keywords: computer vision,object detection
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+Provides-Extra: all
+Provides-Extra: tests
+Provides-Extra: build
+Provides-Extra: optional
+License-File: LICENSE
+
+# CAMDet
+* 这是一个简单粗暴的README...
+
+## Config: 
+* 主要修改字段: 
+  * backbone{type='...', type_name='...', ...}
+  * type字段选择: CAMDet(w/o skip connection), MultiCAMDet(with skip connection)
+  * type_name字段选择参见**Backbone**代码中的**specification**
+* mask_rcnn:
+  * 包含FPN: ./configs/levit/mask_rcnn_camdet_neck4_1x.py
+  * 不包含FPN: ./configs/levit/mask_rcnn_camdet_noneck_1x.py
+* retinaNet:
+  * 包含FPN: ./configs/levit/retinanet_camdet_neck4_1x.py
+  * 不包含FPN: ./configs/levit/retinanet_camdet_noneck_1x.py
+
+## Backbone：
+* 配置字段：specification
+* Baseline: 不包含skip connection
+  * ./mmdet/models/backbones/camdet_baseline.py
+* Multi-scale CAMDet: 包含skip connection
+  * ./mmdet/models/backbones/camdet_multiscale.py
+  * blocks设置代码: ./mmdet/models/backbones/camdet_blocks.py
+  * layer层代码: ./mmdet/models/backbones/camdet_layer.py
+
+
+

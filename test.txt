@@ -1,0 +1,783 @@
+apex is not installed
+attntype: ['SA', 'SA', 'SA', 'SA']
+addca: [True, True, True, True]
+crossca_position: [1, 2, 3]
+MaskRCNN(
+  34.074 M, 99.860% Params, 154.498 GFLOPs, 100.000% FLOPs, 
+  (backbone): SwinTransformerChannelWithCaNoNeck(
+    16.53 M, 48.444% Params, 36.457 GFLOPs, 23.597% FLOPs, 
+    (b16): Sequential(
+      0.004 M, 0.011% Params, 0.95 GFLOPs, 0.615% FLOPs, 
+      (0): Conv2d_BN(
+        0.004 M, 0.011% Params, 0.95 GFLOPs, 0.615% FLOPs, 
+        (c): Conv2d(0.003 M, 0.010% Params, 0.885 GFLOPs, 0.573% FLOPs, 3, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn): BatchNorm2d(0.0 M, 0.001% Params, 0.066 GFLOPs, 0.042% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+    )
+    (patch_embed): PatchEmbed(
+      0.262 M, 0.769% Params, 4.196 GFLOPs, 2.716% FLOPs, 
+      (proj): Conv2d(0.262 M, 0.769% Params, 4.196 GFLOPs, 2.716% FLOPs, 128, 128, kernel_size=(4, 4), stride=(4, 4))
+      (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+    )
+    (pos_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+    (layers): ModuleList(
+      14.198 M, 41.609% Params, 24.324 GFLOPs, 15.744% FLOPs, 
+      (0): SABasicLayer(
+        0.562 M, 1.648% Params, 9.051 GFLOPs, 5.858% FLOPs, 
+        (blocks): ModuleList(
+          0.362 M, 1.062% Params, 5.856 GFLOPs, 3.790% FLOPs, 
+          (0): SwinTransformerBlock(
+            0.181 M, 0.531% Params, 2.928 GFLOPs, 1.895% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.05 M, 0.145% Params, 0.831 GFLOPs, 0.538% FLOPs, 
+              (qkv): Linear(0.033 M, 0.097% Params, 0.554 GFLOPs, 0.359% FLOPs, in_features=128, out_features=256, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.017 M, 0.048% Params, 0.277 GFLOPs, 0.179% FLOPs, in_features=128, out_features=128, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): Identity(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.132 M, 0.386% Params, 2.097 GFLOPs, 1.357% FLOPs, 
+              (fc1): Linear(0.066 M, 0.194% Params, 1.049 GFLOPs, 0.679% FLOPs, in_features=128, out_features=512, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.066 M, 0.192% Params, 1.049 GFLOPs, 0.679% FLOPs, in_features=512, out_features=128, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (1): SwinTransformerBlock(
+            0.181 M, 0.531% Params, 2.928 GFLOPs, 1.895% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.05 M, 0.145% Params, 0.831 GFLOPs, 0.538% FLOPs, 
+              (qkv): Linear(0.033 M, 0.097% Params, 0.554 GFLOPs, 0.359% FLOPs, in_features=128, out_features=256, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.017 M, 0.048% Params, 0.277 GFLOPs, 0.179% FLOPs, in_features=128, out_features=128, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.132 M, 0.386% Params, 2.097 GFLOPs, 1.357% FLOPs, 
+              (fc1): Linear(0.066 M, 0.194% Params, 1.049 GFLOPs, 0.679% FLOPs, in_features=128, out_features=512, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.066 M, 0.192% Params, 1.049 GFLOPs, 0.679% FLOPs, in_features=512, out_features=128, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+        )
+        (casccm): CaScCmShareA(
+          0.2 M, 0.586% Params, 3.195 GFLOPs, 2.068% FLOPs, 
+          (c_attn): Channel_via_Residual(
+            0.131 M, 0.385% Params, 2.097 GFLOPs, 1.357% FLOPs, 
+            (m): Channel_via_MSA_Share_A(
+              0.131 M, 0.385% Params, 2.097 GFLOPs, 1.357% FLOPs, 
+              (qkv): Linear(0.098 M, 0.288% Params, 1.573 GFLOPs, 1.018% FLOPs, in_features=128, out_features=768, bias=False)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (activation): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (proj): Linear(0.033 M, 0.096% Params, 0.524 GFLOPs, 0.339% FLOPs, in_features=256, out_features=128, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (s_conv): Spatial_via_Conv(
+            0.002 M, 0.007% Params, 0.037 GFLOPs, 0.024% FLOPs, 
+            (block): Residual(
+              0.002 M, 0.007% Params, 0.037 GFLOPs, 0.024% FLOPs, 
+              (m): Sequential(
+                0.002 M, 0.007% Params, 0.037 GFLOPs, 0.024% FLOPs, 
+                (0): Conv2d(0.001 M, 0.003% Params, 0.018 GFLOPs, 0.012% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+                (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                (2): SyncBatchNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                (3): Conv2d(0.001 M, 0.003% Params, 0.018 GFLOPs, 0.012% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+              )
+            )
+          )
+          (mlp): Residual(
+            0.066 M, 0.194% Params, 1.061 GFLOPs, 0.687% FLOPs, 
+            (m): Sequential(
+              0.066 M, 0.194% Params, 1.061 GFLOPs, 0.687% FLOPs, 
+              (0): Linear_BN(
+                0.033 M, 0.098% Params, 0.532 GFLOPs, 0.345% FLOPs, 
+                (c): Linear(0.033 M, 0.096% Params, 0.524 GFLOPs, 0.339% FLOPs, in_features=128, out_features=256, bias=False)
+                (bn): BatchNorm1d(0.001 M, 0.002% Params, 0.008 GFLOPs, 0.005% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (2): Linear_BN(
+                0.033 M, 0.097% Params, 0.528 GFLOPs, 0.342% FLOPs, 
+                (c): Linear(0.033 M, 0.096% Params, 0.524 GFLOPs, 0.339% FLOPs, in_features=256, out_features=128, bias=False)
+                (bn): BatchNorm1d(0.0 M, 0.001% Params, 0.004 GFLOPs, 0.003% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+          )
+          (norm_sc): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+          (norm_mlp): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (1): PatchMerging(
+        0.066 M, 0.192% Params, 0.262 GFLOPs, 0.170% FLOPs, 
+        (reduction): Linear(0.066 M, 0.192% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=512, out_features=128, bias=False)
+        (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (512,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): SABasicLayer(
+        0.562 M, 1.648% Params, 2.31 GFLOPs, 1.495% FLOPs, 
+        (blocks): ModuleList(
+          0.362 M, 1.062% Params, 1.511 GFLOPs, 0.978% FLOPs, 
+          (0): SwinTransformerBlock(
+            0.181 M, 0.531% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.05 M, 0.145% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.033 M, 0.097% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=128, out_features=256, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.017 M, 0.048% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=128, out_features=128, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.132 M, 0.386% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.066 M, 0.194% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=128, out_features=512, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.066 M, 0.192% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=512, out_features=128, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (1): SwinTransformerBlock(
+            0.181 M, 0.531% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.05 M, 0.145% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.033 M, 0.097% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=128, out_features=256, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.017 M, 0.048% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=128, out_features=128, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.132 M, 0.386% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.066 M, 0.194% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=128, out_features=512, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.066 M, 0.192% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=512, out_features=128, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+        )
+        (casccm): CaScCmShareA(
+          0.2 M, 0.586% Params, 0.799 GFLOPs, 0.517% FLOPs, 
+          (c_attn): Channel_via_Residual(
+            0.131 M, 0.385% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+            (m): Channel_via_MSA_Share_A(
+              0.131 M, 0.385% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (qkv): Linear(0.098 M, 0.288% Params, 0.393 GFLOPs, 0.255% FLOPs, in_features=128, out_features=768, bias=False)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (activation): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (proj): Linear(0.033 M, 0.096% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=256, out_features=128, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (s_conv): Spatial_via_Conv(
+            0.002 M, 0.007% Params, 0.009 GFLOPs, 0.006% FLOPs, 
+            (block): Residual(
+              0.002 M, 0.007% Params, 0.009 GFLOPs, 0.006% FLOPs, 
+              (m): Sequential(
+                0.002 M, 0.007% Params, 0.009 GFLOPs, 0.006% FLOPs, 
+                (0): Conv2d(0.001 M, 0.003% Params, 0.005 GFLOPs, 0.003% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+                (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                (2): SyncBatchNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                (3): Conv2d(0.001 M, 0.003% Params, 0.005 GFLOPs, 0.003% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+              )
+            )
+          )
+          (mlp): Residual(
+            0.066 M, 0.194% Params, 0.265 GFLOPs, 0.172% FLOPs, 
+            (m): Sequential(
+              0.066 M, 0.194% Params, 0.265 GFLOPs, 0.172% FLOPs, 
+              (0): Linear_BN(
+                0.033 M, 0.098% Params, 0.133 GFLOPs, 0.086% FLOPs, 
+                (c): Linear(0.033 M, 0.096% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=128, out_features=256, bias=False)
+                (bn): BatchNorm1d(0.001 M, 0.002% Params, 0.002 GFLOPs, 0.001% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (2): Linear_BN(
+                0.033 M, 0.097% Params, 0.132 GFLOPs, 0.086% FLOPs, 
+                (c): Linear(0.033 M, 0.096% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=256, out_features=128, bias=False)
+                (bn): BatchNorm1d(0.0 M, 0.001% Params, 0.001 GFLOPs, 0.001% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+          )
+          (norm_sc): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+          (norm_mlp): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (3): CrossAddCa(
+        0.347 M, 1.018% Params, 3.788 GFLOPs, 2.452% FLOPs, 
+        (c_attn): Channel_via_Residual(
+          0.131 M, 0.385% Params, 2.097 GFLOPs, 1.357% FLOPs, 
+          (m): Channel_via_MSA_Share_A(
+            0.131 M, 0.385% Params, 2.097 GFLOPs, 1.357% FLOPs, 
+            (qkv): Linear(0.098 M, 0.288% Params, 1.573 GFLOPs, 1.018% FLOPs, in_features=128, out_features=768, bias=False)
+            (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            (activation): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (proj): Linear(0.033 M, 0.096% Params, 0.524 GFLOPs, 0.339% FLOPs, in_features=256, out_features=128, bias=True)
+            (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (s_conv): Spatial_via_Conv(
+          0.002 M, 0.007% Params, 0.037 GFLOPs, 0.024% FLOPs, 
+          (block): Residual(
+            0.002 M, 0.007% Params, 0.037 GFLOPs, 0.024% FLOPs, 
+            (m): Sequential(
+              0.002 M, 0.007% Params, 0.037 GFLOPs, 0.024% FLOPs, 
+              (0): Conv2d(0.001 M, 0.003% Params, 0.018 GFLOPs, 0.012% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+              (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (2): SyncBatchNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (3): Conv2d(0.001 M, 0.003% Params, 0.018 GFLOPs, 0.012% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+            )
+          )
+        )
+        (mlp): Residual(
+          0.066 M, 0.194% Params, 1.061 GFLOPs, 0.687% FLOPs, 
+          (m): Sequential(
+            0.066 M, 0.194% Params, 1.061 GFLOPs, 0.687% FLOPs, 
+            (0): Linear_BN(
+              0.033 M, 0.098% Params, 0.532 GFLOPs, 0.345% FLOPs, 
+              (c): Linear(0.033 M, 0.096% Params, 0.524 GFLOPs, 0.339% FLOPs, in_features=128, out_features=256, bias=False)
+              (bn): BatchNorm1d(0.001 M, 0.002% Params, 0.008 GFLOPs, 0.005% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (2): Linear_BN(
+              0.033 M, 0.097% Params, 0.528 GFLOPs, 0.342% FLOPs, 
+              (c): Linear(0.033 M, 0.096% Params, 0.524 GFLOPs, 0.339% FLOPs, in_features=256, out_features=128, bias=False)
+              (bn): BatchNorm1d(0.0 M, 0.001% Params, 0.004 GFLOPs, 0.003% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (upsample_2): ConvTranspose2d(0.066 M, 0.192% Params, 0.265 GFLOPs, 0.172% FLOPs, 128, 128, kernel_size=(2, 2), stride=(2, 2))
+        (norm_sc): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+        (norm_mlp): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+        (reduction): Linear(0.016 M, 0.048% Params, 0.066 GFLOPs, 0.042% FLOPs, in_features=128, out_features=128, bias=False)
+        (downsample): PatchMerging(
+          0.066 M, 0.192% Params, 0.262 GFLOPs, 0.170% FLOPs, 
+          (reduction): Linear(0.066 M, 0.192% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=512, out_features=128, bias=False)
+          (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (4): PatchMerging(
+        0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, 
+        (reduction): Linear(0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=512, out_features=256, bias=False)
+        (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (512,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): SABasicLayer(
+        5.13 M, 15.036% Params, 5.326 GFLOPs, 3.447% FLOPs, 
+        (blocks): ModuleList(
+          4.338 M, 12.712% Params, 4.533 GFLOPs, 2.934% FLOPs, 
+          (0): SwinTransformerBlock(
+            0.723 M, 2.119% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.197 M, 0.578% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.132 M, 0.386% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=256, out_features=512, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.066 M, 0.193% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=256, out_features=256, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.526 M, 1.540% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.263 M, 0.771% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=256, out_features=1024, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.262 M, 0.769% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=1024, out_features=256, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (1): SwinTransformerBlock(
+            0.723 M, 2.119% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.197 M, 0.578% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.132 M, 0.386% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=256, out_features=512, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.066 M, 0.193% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=256, out_features=256, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.526 M, 1.540% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.263 M, 0.771% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=256, out_features=1024, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.262 M, 0.769% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=1024, out_features=256, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (2): SwinTransformerBlock(
+            0.723 M, 2.119% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.197 M, 0.578% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.132 M, 0.386% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=256, out_features=512, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.066 M, 0.193% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=256, out_features=256, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.526 M, 1.540% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.263 M, 0.771% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=256, out_features=1024, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.262 M, 0.769% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=1024, out_features=256, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (3): SwinTransformerBlock(
+            0.723 M, 2.119% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.197 M, 0.578% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.132 M, 0.386% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=256, out_features=512, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.066 M, 0.193% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=256, out_features=256, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.526 M, 1.540% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.263 M, 0.771% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=256, out_features=1024, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.262 M, 0.769% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=1024, out_features=256, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (4): SwinTransformerBlock(
+            0.723 M, 2.119% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.197 M, 0.578% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.132 M, 0.386% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=256, out_features=512, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.066 M, 0.193% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=256, out_features=256, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.526 M, 1.540% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.263 M, 0.771% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=256, out_features=1024, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.262 M, 0.769% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=1024, out_features=256, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (5): SwinTransformerBlock(
+            0.723 M, 2.119% Params, 0.755 GFLOPs, 0.489% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.197 M, 0.578% Params, 0.231 GFLOPs, 0.150% FLOPs, 
+              (qkv): Linear(0.132 M, 0.386% Params, 0.154 GFLOPs, 0.100% FLOPs, in_features=256, out_features=512, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.066 M, 0.193% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=256, out_features=256, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              0.526 M, 1.540% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (fc1): Linear(0.263 M, 0.771% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=256, out_features=1024, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.262 M, 0.769% Params, 0.262 GFLOPs, 0.170% FLOPs, in_features=1024, out_features=256, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+        )
+        (casccm): CaScCmShareA(
+          0.793 M, 2.324% Params, 0.793 GFLOPs, 0.513% FLOPs, 
+          (c_attn): Channel_via_Residual(
+            0.525 M, 1.537% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+            (m): Channel_via_MSA_Share_A(
+              0.525 M, 1.537% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+              (qkv): Linear(0.393 M, 1.152% Params, 0.393 GFLOPs, 0.255% FLOPs, in_features=256, out_features=1536, bias=False)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (activation): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (proj): Linear(0.131 M, 0.385% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=512, out_features=256, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (s_conv): Spatial_via_Conv(
+            0.005 M, 0.014% Params, 0.005 GFLOPs, 0.003% FLOPs, 
+            (block): Residual(
+              0.005 M, 0.014% Params, 0.005 GFLOPs, 0.003% FLOPs, 
+              (m): Sequential(
+                0.005 M, 0.014% Params, 0.005 GFLOPs, 0.003% FLOPs, 
+                (0): Conv2d(0.002 M, 0.007% Params, 0.002 GFLOPs, 0.001% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+                (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                (2): SyncBatchNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                (3): Conv2d(0.002 M, 0.007% Params, 0.002 GFLOPs, 0.001% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+              )
+            )
+          )
+          (mlp): Residual(
+            0.264 M, 0.773% Params, 0.264 GFLOPs, 0.171% FLOPs, 
+            (m): Sequential(
+              0.264 M, 0.773% Params, 0.264 GFLOPs, 0.171% FLOPs, 
+              (0): Linear_BN(
+                0.132 M, 0.387% Params, 0.132 GFLOPs, 0.086% FLOPs, 
+                (c): Linear(0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=256, out_features=512, bias=False)
+                (bn): BatchNorm1d(0.001 M, 0.003% Params, 0.001 GFLOPs, 0.001% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (2): Linear_BN(
+                0.132 M, 0.386% Params, 0.132 GFLOPs, 0.085% FLOPs, 
+                (c): Linear(0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=512, out_features=256, bias=False)
+                (bn): BatchNorm1d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+          )
+          (norm_sc): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+          (norm_mlp): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (6): CrossAddCa(
+        0.429 M, 1.258% Params, 1.029 GFLOPs, 0.666% FLOPs, 
+        (c_attn): Channel_via_Residual(
+          0.131 M, 0.385% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+          (m): Channel_via_MSA_Share_A(
+            0.131 M, 0.385% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+            (qkv): Linear(0.098 M, 0.288% Params, 0.393 GFLOPs, 0.255% FLOPs, in_features=128, out_features=768, bias=False)
+            (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            (activation): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (proj): Linear(0.033 M, 0.096% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=256, out_features=128, bias=True)
+            (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (s_conv): Spatial_via_Conv(
+          0.002 M, 0.007% Params, 0.009 GFLOPs, 0.006% FLOPs, 
+          (block): Residual(
+            0.002 M, 0.007% Params, 0.009 GFLOPs, 0.006% FLOPs, 
+            (m): Sequential(
+              0.002 M, 0.007% Params, 0.009 GFLOPs, 0.006% FLOPs, 
+              (0): Conv2d(0.001 M, 0.003% Params, 0.005 GFLOPs, 0.003% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+              (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (2): SyncBatchNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (3): Conv2d(0.001 M, 0.003% Params, 0.005 GFLOPs, 0.003% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+            )
+          )
+        )
+        (mlp): Residual(
+          0.066 M, 0.194% Params, 0.265 GFLOPs, 0.172% FLOPs, 
+          (m): Sequential(
+            0.066 M, 0.194% Params, 0.265 GFLOPs, 0.172% FLOPs, 
+            (0): Linear_BN(
+              0.033 M, 0.098% Params, 0.133 GFLOPs, 0.086% FLOPs, 
+              (c): Linear(0.033 M, 0.096% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=128, out_features=256, bias=False)
+              (bn): BatchNorm1d(0.001 M, 0.002% Params, 0.002 GFLOPs, 0.001% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (2): Linear_BN(
+              0.033 M, 0.097% Params, 0.132 GFLOPs, 0.086% FLOPs, 
+              (c): Linear(0.033 M, 0.096% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=256, out_features=128, bias=False)
+              (bn): BatchNorm1d(0.0 M, 0.001% Params, 0.001 GFLOPs, 0.001% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (upsample_2): ConvTranspose2d(0.066 M, 0.192% Params, 0.066 GFLOPs, 0.043% FLOPs, 128, 128, kernel_size=(2, 2), stride=(2, 2))
+        (norm_sc): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+        (norm_mlp): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+        (reduction): Linear(0.033 M, 0.096% Params, 0.033 GFLOPs, 0.021% FLOPs, in_features=256, out_features=128, bias=False)
+        (downsample): PatchMerging(
+          0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, 
+          (reduction): Linear(0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=512, out_features=256, bias=False)
+          (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (7): PatchMerging(
+        0.393 M, 1.152% Params, 0.102 GFLOPs, 0.066% FLOPs, 
+        (reduction): Linear(0.393 M, 1.152% Params, 0.102 GFLOPs, 0.066% FLOPs, in_features=1024, out_features=384, bias=False)
+        (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (8): SABasicLayer(
+        5.029 M, 14.739% Params, 1.336 GFLOPs, 0.865% FLOPs, 
+        (blocks): ModuleList(
+          3.25 M, 9.525% Params, 0.874 GFLOPs, 0.565% FLOPs, 
+          (0): SwinTransformerBlock(
+            1.625 M, 4.763% Params, 0.437 GFLOPs, 0.283% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.444 M, 1.300% Params, 0.13 GFLOPs, 0.084% FLOPs, 
+              (qkv): Linear(0.296 M, 0.867% Params, 0.087 GFLOPs, 0.056% FLOPs, in_features=384, out_features=768, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.148 M, 0.433% Params, 0.043 GFLOPs, 0.028% FLOPs, in_features=384, out_features=384, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              1.182 M, 3.463% Params, 0.307 GFLOPs, 0.199% FLOPs, 
+              (fc1): Linear(0.591 M, 1.733% Params, 0.153 GFLOPs, 0.099% FLOPs, in_features=384, out_features=1536, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.59 M, 1.730% Params, 0.153 GFLOPs, 0.099% FLOPs, in_features=1536, out_features=384, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+          (1): SwinTransformerBlock(
+            1.625 M, 4.763% Params, 0.437 GFLOPs, 0.283% FLOPs, 
+            (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+            (attn): WindowAttention(
+              0.444 M, 1.300% Params, 0.13 GFLOPs, 0.084% FLOPs, 
+              (qkv): Linear(0.296 M, 0.867% Params, 0.087 GFLOPs, 0.056% FLOPs, in_features=384, out_features=768, bias=True)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (proj): Linear(0.148 M, 0.433% Params, 0.043 GFLOPs, 0.028% FLOPs, in_features=384, out_features=384, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (softmax): Softmax(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, dim=-1)
+            )
+            (drop_path): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              1.182 M, 3.463% Params, 0.307 GFLOPs, 0.199% FLOPs, 
+              (fc1): Linear(0.591 M, 1.733% Params, 0.153 GFLOPs, 0.099% FLOPs, in_features=384, out_features=1536, bias=True)
+              (act): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (fc2): Linear(0.59 M, 1.730% Params, 0.153 GFLOPs, 0.099% FLOPs, in_features=1536, out_features=384, bias=True)
+              (drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            )
+          )
+        )
+        (casccm): CaScCmShareA(
+          1.779 M, 5.214% Params, 0.462 GFLOPs, 0.299% FLOPs, 
+          (c_attn): Channel_via_Residual(
+            1.18 M, 3.458% Params, 0.307 GFLOPs, 0.199% FLOPs, 
+            (m): Channel_via_MSA_Share_A(
+              1.18 M, 3.458% Params, 0.307 GFLOPs, 0.199% FLOPs, 
+              (qkv): Linear(0.885 M, 2.593% Params, 0.23 GFLOPs, 0.149% FLOPs, in_features=384, out_features=2304, bias=False)
+              (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (activation): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (proj): Linear(0.295 M, 0.865% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=768, out_features=384, bias=True)
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (s_conv): Spatial_via_Conv(
+            0.007 M, 0.020% Params, 0.002 GFLOPs, 0.001% FLOPs, 
+            (block): Residual(
+              0.007 M, 0.020% Params, 0.002 GFLOPs, 0.001% FLOPs, 
+              (m): Sequential(
+                0.007 M, 0.020% Params, 0.002 GFLOPs, 0.001% FLOPs, 
+                (0): Conv2d(0.003 M, 0.010% Params, 0.001 GFLOPs, 0.001% FLOPs, 384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False)
+                (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                (2): SyncBatchNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                (3): Conv2d(0.003 M, 0.010% Params, 0.001 GFLOPs, 0.001% FLOPs, 384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False)
+              )
+            )
+          )
+          (mlp): Residual(
+            0.592 M, 1.735% Params, 0.154 GFLOPs, 0.100% FLOPs, 
+            (m): Sequential(
+              0.592 M, 1.735% Params, 0.154 GFLOPs, 0.100% FLOPs, 
+              (0): Linear_BN(
+                0.296 M, 0.869% Params, 0.077 GFLOPs, 0.050% FLOPs, 
+                (c): Linear(0.295 M, 0.864% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=384, out_features=768, bias=False)
+                (bn): BatchNorm1d(0.002 M, 0.005% Params, 0.0 GFLOPs, 0.000% FLOPs, 768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (2): Linear_BN(
+                0.296 M, 0.867% Params, 0.077 GFLOPs, 0.050% FLOPs, 
+                (c): Linear(0.295 M, 0.864% Params, 0.077 GFLOPs, 0.050% FLOPs, in_features=768, out_features=384, bias=False)
+                (bn): BatchNorm1d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+          )
+          (norm_sc): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+          (norm_mlp): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (9): CrossAddCa(
+        1.547 M, 4.533% Params, 0.989 GFLOPs, 0.640% FLOPs, 
+        (c_attn): Channel_via_Residual(
+          0.525 M, 1.537% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+          (m): Channel_via_MSA_Share_A(
+            0.525 M, 1.537% Params, 0.524 GFLOPs, 0.339% FLOPs, 
+            (qkv): Linear(0.393 M, 1.152% Params, 0.393 GFLOPs, 0.255% FLOPs, in_features=256, out_features=1536, bias=False)
+            (attn_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            (activation): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (proj): Linear(0.131 M, 0.385% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=512, out_features=256, bias=True)
+            (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+            (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (s_conv): Spatial_via_Conv(
+          0.005 M, 0.014% Params, 0.005 GFLOPs, 0.003% FLOPs, 
+          (block): Residual(
+            0.005 M, 0.014% Params, 0.005 GFLOPs, 0.003% FLOPs, 
+            (m): Sequential(
+              0.005 M, 0.014% Params, 0.005 GFLOPs, 0.003% FLOPs, 
+              (0): Conv2d(0.002 M, 0.007% Params, 0.002 GFLOPs, 0.001% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+              (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (2): SyncBatchNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (3): Conv2d(0.002 M, 0.007% Params, 0.002 GFLOPs, 0.001% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+            )
+          )
+        )
+        (mlp): Residual(
+          0.264 M, 0.773% Params, 0.264 GFLOPs, 0.171% FLOPs, 
+          (m): Sequential(
+            0.264 M, 0.773% Params, 0.264 GFLOPs, 0.171% FLOPs, 
+            (0): Linear_BN(
+              0.132 M, 0.387% Params, 0.132 GFLOPs, 0.086% FLOPs, 
+              (c): Linear(0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=256, out_features=512, bias=False)
+              (bn): BatchNorm1d(0.001 M, 0.003% Params, 0.001 GFLOPs, 0.001% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (1): Hardswish(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            (2): Linear_BN(
+              0.132 M, 0.386% Params, 0.132 GFLOPs, 0.085% FLOPs, 
+              (c): Linear(0.131 M, 0.384% Params, 0.131 GFLOPs, 0.085% FLOPs, in_features=512, out_features=256, bias=False)
+              (bn): BatchNorm1d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (upsample_2): ConvTranspose2d(0.262 M, 0.769% Params, 0.069 GFLOPs, 0.044% FLOPs, 256, 256, kernel_size=(2, 2), stride=(2, 2))
+        (norm_sc): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+        (norm_mlp): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+        (reduction): Linear(0.098 M, 0.288% Params, 0.026 GFLOPs, 0.017% FLOPs, in_features=384, out_features=256, bias=False)
+        (downsample): PatchMerging(
+          0.393 M, 1.152% Params, 0.102 GFLOPs, 0.066% FLOPs, 
+          (reduction): Linear(0.393 M, 1.152% Params, 0.102 GFLOPs, 0.066% FLOPs, in_features=1024, out_features=384, bias=False)
+          (norm): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (1024,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (upsample_2): Upsample(0.0 M, 0.000% Params, 0.022 GFLOPs, 0.014% FLOPs, scale_factor=2.0, mode=nearest)
+    (fpn0): Sequential(
+      0.295 M, 0.866% Params, 4.731 GFLOPs, 3.062% FLOPs, 
+      (0): Conv2d(0.295 M, 0.864% Params, 4.719 GFLOPs, 3.054% FLOPs, 128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(0.001 M, 0.002% Params, 0.008 GFLOPs, 0.005% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU6(0.0 M, 0.000% Params, 0.004 GFLOPs, 0.003% FLOPs, inplace=True)
+    )
+    (fpn1): Sequential(
+      0.295 M, 0.866% Params, 1.183 GFLOPs, 0.766% FLOPs, 
+      (0): Conv2d(0.295 M, 0.864% Params, 1.18 GFLOPs, 0.764% FLOPs, 128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(0.001 M, 0.002% Params, 0.002 GFLOPs, 0.001% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU6(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+    )
+    (fpn2): Sequential(
+      0.59 M, 1.730% Params, 0.591 GFLOPs, 0.382% FLOPs, 
+      (0): Conv2d(0.59 M, 1.729% Params, 0.59 GFLOPs, 0.382% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU6(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+    )
+    (fpn3): Sequential(
+      0.885 M, 2.594% Params, 0.46 GFLOPs, 0.298% FLOPs, 
+      (0): Conv2d(0.885 M, 2.593% Params, 0.46 GFLOPs, 0.298% FLOPs, 384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU6(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+    )
+    (norm0): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+    (norm1): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (128,), eps=1e-05, elementwise_affine=True)
+    (norm2): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (256,), eps=1e-05, elementwise_affine=True)
+    (norm3): LayerNorm(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, (384,), eps=1e-05, elementwise_affine=True)
+  )
+  (rpn_head): RPNHead(
+    0.594 M, 1.741% Params, 50.663 GFLOPs, 32.792% FLOPs, 
+    (loss_cls): CrossEntropyLoss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+    (loss_bbox): L1Loss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+    (rpn_conv): Conv2d(0.59 M, 1.729% Params, 50.334 GFLOPs, 32.579% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (rpn_cls): Conv2d(0.001 M, 0.002% Params, 0.066 GFLOPs, 0.043% FLOPs, 256, 3, kernel_size=(1, 1), stride=(1, 1))
+    (rpn_reg): Conv2d(0.003 M, 0.009% Params, 0.263 GFLOPs, 0.170% FLOPs, 256, 12, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (roi_head): StandardRoIHead(
+    16.95 M, 49.675% Params, 67.379 GFLOPs, 43.611% FLOPs, 
+    (bbox_roi_extractor): SingleRoIExtractor(
+      0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+      (roi_layers): ModuleList(
+        0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+        (0): RoIAlign(output_size=(7, 7), spatial_scale=0.25, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+        (1): RoIAlign(output_size=(7, 7), spatial_scale=0.125, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+        (2): RoIAlign(output_size=(7, 7), spatial_scale=0.0625, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+        (3): RoIAlign(output_size=(7, 7), spatial_scale=0.03125, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+      )
+    )
+    (bbox_head): Shared2FCBBoxHead(
+      14.307 M, 41.929% Params, 14.306 GFLOPs, 9.260% FLOPs, 
+      (loss_cls): CrossEntropyLoss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (loss_bbox): L1Loss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (fc_cls): Linear(0.083 M, 0.243% Params, 0.083 GFLOPs, 0.054% FLOPs, in_features=1024, out_features=81, bias=True)
+      (fc_reg): Linear(0.328 M, 0.961% Params, 0.328 GFLOPs, 0.212% FLOPs, in_features=1024, out_features=320, bias=True)
+      (shared_convs): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (shared_fcs): ModuleList(
+        13.896 M, 40.724% Params, 13.894 GFLOPs, 8.993% FLOPs, 
+        (0): Linear(12.846 M, 37.648% Params, 12.845 GFLOPs, 8.314% FLOPs, in_features=12544, out_features=1024, bias=True)
+        (1): Linear(1.05 M, 3.076% Params, 1.049 GFLOPs, 0.679% FLOPs, in_features=1024, out_features=1024, bias=True)
+      )
+      (cls_convs): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (cls_fcs): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (reg_convs): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (reg_fcs): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.001% FLOPs, inplace=True)
+    )
+    (mask_roi_extractor): SingleRoIExtractor(
+      0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+      (roi_layers): ModuleList(
+        0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+        (0): RoIAlign(output_size=(14, 14), spatial_scale=0.25, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+        (1): RoIAlign(output_size=(14, 14), spatial_scale=0.125, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+        (2): RoIAlign(output_size=(14, 14), spatial_scale=0.0625, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+        (3): RoIAlign(output_size=(14, 14), spatial_scale=0.03125, sampling_ratio=0, pool_mode=avg, aligned=True, use_torchvision=False)
+      )
+    )
+    (mask_head): FCNMaskHead(
+      2.643 M, 7.747% Params, 53.072 GFLOPs, 34.352% FLOPs, 
+      (loss_mask): CrossEntropyLoss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+      (convs): ModuleList(
+        2.36 M, 6.917% Params, 46.282 GFLOPs, 29.957% FLOPs, 
+        (0): ConvModule(
+          0.59 M, 1.729% Params, 11.571 GFLOPs, 7.489% FLOPs, 
+          (conv): Conv2d(0.59 M, 1.729% Params, 11.566 GFLOPs, 7.486% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (activate): ReLU(0.0 M, 0.000% Params, 0.005 GFLOPs, 0.003% FLOPs, inplace=True)
+        )
+        (1): ConvModule(
+          0.59 M, 1.729% Params, 11.571 GFLOPs, 7.489% FLOPs, 
+          (conv): Conv2d(0.59 M, 1.729% Params, 11.566 GFLOPs, 7.486% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (activate): ReLU(0.0 M, 0.000% Params, 0.005 GFLOPs, 0.003% FLOPs, inplace=True)
+        )
+        (2): ConvModule(
+          0.59 M, 1.729% Params, 11.571 GFLOPs, 7.489% FLOPs, 
+          (conv): Conv2d(0.59 M, 1.729% Params, 11.566 GFLOPs, 7.486% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (activate): ReLU(0.0 M, 0.000% Params, 0.005 GFLOPs, 0.003% FLOPs, inplace=True)
+        )
+        (3): ConvModule(
+          0.59 M, 1.729% Params, 11.571 GFLOPs, 7.489% FLOPs, 
+          (conv): Conv2d(0.59 M, 1.729% Params, 11.566 GFLOPs, 7.486% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (activate): ReLU(0.0 M, 0.000% Params, 0.005 GFLOPs, 0.003% FLOPs, inplace=True)
+        )
+      )
+      (upsample): ConvTranspose2d(0.262 M, 0.769% Params, 5.158 GFLOPs, 3.339% FLOPs, 256, 256, kernel_size=(2, 2), stride=(2, 2))
+      (conv_logits): Conv2d(0.021 M, 0.060% Params, 1.612 GFLOPs, 1.043% FLOPs, 256, 80, kernel_size=(1, 1), stride=(1, 1))
+      (relu): ReLU(0.0 M, 0.000% Params, 0.02 GFLOPs, 0.013% FLOPs, inplace=True)
+    )
+  )
+)
+==============================
+Input shape: (3, 1280, 800)
+Flops: 154.5 GFLOPs
+Params: 34.12 M
+==============================
+!!!Please be cautious if you use the results in papers. You may need to check if all ops are supported and verify that the flops computation is correct.
