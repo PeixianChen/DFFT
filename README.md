@@ -5,7 +5,7 @@ This code is based on [mmdetection](https://github.com/open-mmlab/mmdetection)
 
 ## Results 
 | Backbone | box mAP | GFLOPs | 
-| :---: | :---: | :---: | :---: | 
+|:---:|:---:|:---:|:---:| 
 | DFFT_{NANO} | 42.8 | 42 |
 | DFFT_{TINY} | 43.5 | 57 |
 | DFFT_{SMALL} | 44.5 | 62 |
