@@ -6,11 +6,11 @@ This code is based on [mmdetection](https://github.com/open-mmlab/mmdetection)
 ## Results 
 | Backbone | box mAP | GFLOPs |
 | :----: | :----: | :----: |
-| DFFT_{NANO} | 42.8 | 42 |
-| DFFT_{TINY} | 43.5 | 57 |
-| DFFT_{SMALL} | 44.5 | 62 |
-| DFFT_{MEDIUM} | 45.7 | 67 | 
-| DFFT_{LARGE} | 46.0 | 101 |
+| $DFFT_{NANO}$ | 42.8 | 42 |
+| $DFFT_{TINY}$ | 43.5 | 57 |
+| $DFFT_{SMALL}$ | 44.5 | 62 |
+| $DFFT_{MEDIUM}$ | 45.7 | 67 | 
+| $DFFT_{LARGE}$ | 46.0 | 101 |
 
 ## Models
 [ImageNet Pretrained](https://drive.google.com/drive/folders/1_uOAf6wvGhsIsPlHfQ635jY3SVgyZ2cu?usp=sharing)
