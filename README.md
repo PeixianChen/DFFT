@@ -1,5 +1,5 @@
 ## Efficient Decoder-free  Object Detection with Transformers
-![image](https://github.com/Anonymous-px/ID2445_DFFT/blob/main/DFFT_wholenet.jpg)
+![image](https://github.com/Pealing/DFFT/blob/main/DFFT_wholenet.jpg)
 
 [Paper](https://arxiv.org/abs/2206.06829)
 
