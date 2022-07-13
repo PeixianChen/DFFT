@@ -1,7 +1,7 @@
 ## Efficient Decoder-free  Object Detection with Transformers
 ![image](https://github.com/Pealing/DFFT/blob/main/DFFT_wholenet.jpg)
 
-[Paper](https://arxiv.org/abs/2206.06829)
+ECCV2022: [Paper](https://arxiv.org/abs/2206.06829)
 
 This code is based on [mmdetection](https://github.com/open-mmlab/mmdetection)
 
